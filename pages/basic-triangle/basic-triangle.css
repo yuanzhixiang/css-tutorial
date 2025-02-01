@@ -1,20 +1,20 @@
-@layer reset, base, demo;
+@layer reset, base,demo;
 
 @layer demo {
   .triangle {
     width: 300px;
     aspect-ratio: 1;
-
+    
     clip-path: polygon(0 0, 100% 100%, 0 100%);
-
+    
     &:nth-child(2) {
       clip-path: polygon(0 0, 100% 0, 100% 100%);
     }
-
+    
     &:nth-child(3) {
       clip-path: polygon(0 0, 100% 0, 0 100%);
     }
-
+    
     &:nth-child(4) {
       clip-path: polygon(100% 0, 100% 100%, 0 100%);
     }
@@ -30,10 +30,7 @@
 
   body {
     display: grid;
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(min(100% - 2rem, 300px), 1fr)
-    );
+    grid-template-columns: repeat(auto-fit, minmax(min(100% - 2rem, 300px), 1fr));
     gap: 2rem;
   }
 }

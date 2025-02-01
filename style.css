@@ -1,0 +1,44 @@
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Exo", "Bungee Shade", cursive, Arial, sans-serif;
+  background: hsl(261.6deg 22.47% 51.43%);
+  color: #fff;
+  padding: 2rem;
+}
+
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.tutorial-list {
+  list-style: none;
+}
+
+.tutorial-list li {
+  margin-bottom: 1rem;
+}
+
+.tutorial-list a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+.tutorial-list a:hover {
+  color: #90face;
+  text-decoration: underline;
+} 
