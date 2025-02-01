@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import BasicTriangle from "./pages/BasicTriangle";
+import BasicTriangle from "./pages/BasicTriangle/BasicTriangle";
 import "./style.css";
 
 const tutorials = [

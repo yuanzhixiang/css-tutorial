@@ -1,0 +1,122 @@
+@layer reset, base, demo;
+
+@layer demo {
+  .triangle {
+    width: 300px;
+    aspect-ratio: 1;
+
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+
+    &:nth-child(2) {
+      clip-path: polygon(0 0, 100% 0, 100% 100%);
+    }
+
+    &:nth-child(3) {
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+    }
+
+    &:nth-child(4) {
+      clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    }
+  }
+  .shape {
+    display: grid;
+    place-content: center;
+    background: #90face;
+    place-self: center;
+    transition: all 0.2s;
+    background: #001185;
+  }
+
+  body {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(100% - 2rem, 300px), 1fr)
+    );
+    gap: 2rem;
+  }
+}
+
+@layer reset {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+@layer base {
+  body {
+    width: 100vw;
+    min-height: 100vh;
+    font-family: "Exo", "Bungee Shade", cursive, Arial, sans-serif;
+    background: hsl(261.6deg 22.47% 51.43%);
+    color-scheme: dark only;
+    color: #fff;
+    display: grid;
+    place-content: center;
+    padding: 1rem;
+    gap: 1rem;
+    &::before {
+      --line: hsl(0 0% 95% / 0.15);
+      --size: 60px;
+      content: "";
+      height: 100vh;
+      width: 100vw;
+      position: fixed;
+      background: linear-gradient(
+            90deg,
+            var(--line) 1px,
+            transparent 1px var(--size)
+          )
+          50% 50% / var(--size) var(--size),
+        linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
+          var(--size) var(--size);
+      mask: linear-gradient(-15deg, transparent 30%, white);
+      top: 0;
+      transform-style: flat;
+      pointer-events: none;
+      z-index: -1;
+    }
+  }
+
+  .tutorials {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 9999;
+    width: 64px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #3f517e;
+    padding: 0.5rem;
+    display: grid;
+    place-content: center;
+    transition: all 0.28s linear;
+
+    &:hover {
+      background: #4161b2;
+    }
+
+    & svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      filter: invert(1);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-delay: -1ms !important;
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      background-attachment: initial !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0s !important;
+      transition-delay: 0s !important;
+    }
+  }
+}
