@@ -1,4 +1,4 @@
-@layer reset, base,demo;
+@layer reset, base, demo;
 
 @layer demo {
   .triangle {
@@ -114,6 +114,19 @@
       scroll-behavior: auto !important;
       transition-duration: 0s !important;
       transition-delay: 0s !important;
+    }
+  }
+}
+
+
+@layer structure1 {
+  @layer structure2 {
+    @layer structure3 {
+      @layer structure4 {
+        @layer structure5 {
+          
+        }
+      }
     }
   }
 }

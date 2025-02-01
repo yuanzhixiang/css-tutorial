@@ -1,0 +1,23 @@
+
+
+@layer A, B, C, css2;
+@import "./css2.css" layer(css2);
+
+@layer A {
+  h1 {
+    color: yellow;
+  }
+}
+
+@layer B {
+  h1 {
+    color: red;
+  }
+}
+
+@layer C {
+  h1 {
+    color: blue;
+  }
+}
+
