@@ -1,0 +1,186 @@
+@layer reset, base, form, demo, inset;
+
+@layer inset {
+  .inset {
+    --top: 20px;
+    --right: 20px;
+    --bottom: 20px;
+    --left: 20px;
+    --radius: 10px;
+
+    &::before {
+      clip-path: inset(
+        var(--top) var(--right) var(--bottom) var(--left) round var(--radius)
+      );
+    }
+  }
+}
+
+@layer demo {
+  .container {
+    width: 50vw;
+    aspect-ratio: 21 / 9;
+    position: relative;
+    outline: 1px dashed rgb(0 0 0 /0.6);
+  }
+
+  .inset {
+    width: 100%;
+    height: 100%;
+    background: color-mix(in oklch, #2196f3, transparent 80%);
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: #2196f3;
+    }
+  }
+
+  .content {
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    border-left: 4px solid #09f;
+    line-height: 1.8;
+    background: aliceblue;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    color: #333;
+    margin-bottom: 2rem;
+
+    & span {
+      font-weight: 700;
+      font-style: italic;
+      text-shadow: 1px 1px 0 rgb(0 0 0 / 0.25);
+    }
+
+    & .top {
+      color: #09f;
+    }
+
+    & .right {
+      color: #ff9800;
+    }
+
+    & .bottom {
+      color: #009688;
+    }
+
+    & .left {
+      color: #9688ac;
+    }
+
+    & label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+}
+
+@layer form {
+  .control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgb(0 0 0 / 0.65);
+    padding: 0.25em 0.5em;
+
+    position: absolute;
+
+    :is(.control-right input[type="range"], .control-left input[type="range"]) {
+      appearance: slider-vertical;
+      width: 20px;
+    }
+
+    &.control-top {
+      left: 0;
+      right: 0;
+      bottom: calc(100% + 10px);
+    }
+
+    &.control-right {
+      top: 0;
+      bottom: 0;
+      left: calc(100% + 10px);
+      writing-mode: vertical-lr;
+      flex-direction: column-reverse;
+    }
+
+    &.control-bottom {
+      left: 0;
+      right: 0;
+      top: calc(100% + 10px);
+    }
+
+    &.control-left {
+      top: 0;
+      bottom: 0;
+      right: calc(100% + 10px);
+      writing-mode: vertical-lr;
+      flex-direction: column-reverse;
+    }
+
+    & label {
+      white-space: nowrap;
+    }
+  }
+  output {
+    background: #90f;
+    padding-inline: 0.5em;
+    padding-block: 0.2em;
+    border-radius: 4px;
+    color: #fff;
+  }
+}
+
+@layer reset {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+@layer base {
+  body {
+    width: 100vw;
+    min-height: 100vh;
+    font-family: "Exo", "Bungee Shade", cursive, Arial, sans-serif;
+    background-color: #557;
+    color: #fff;
+    display: grid;
+    place-content: center;
+    padding: 1rem;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  .tutorials {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 9999;
+    width: 64px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #3f517e;
+    padding: 0.5rem;
+    display: grid;
+    place-content: center;
+    transition: all 0.28s linear;
+
+    &:hover {
+      background: #4161b2;
+    }
+
+    & svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      filter: invert(1);
+    }
+  }
+}
