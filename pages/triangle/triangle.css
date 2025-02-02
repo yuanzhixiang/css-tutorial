@@ -2,23 +2,42 @@
 
 @layer demo {
   .triangle {
-    width: 300px;
+    --w: 300px;
+    width: var(--w);
+    /* 这个元素的作用是控制宽和高的比率，有了这个就只需要写宽就可以了 */
     aspect-ratio: 1;
-    
+
     clip-path: polygon(0 0, 100% 100%, 0 100%);
-    
+
     &:nth-child(2) {
-      clip-path: polygon(0 0, 100% 0, 100% 100%);
+      clip-path: polygon(100% 0, 100% 100%, 0 0);
     }
-    
+
     &:nth-child(3) {
-      clip-path: polygon(0 0, 100% 0, 0 100%);
-    }
-    
-    &:nth-child(4) {
       clip-path: polygon(100% 0, 100% 100%, 0 100%);
     }
+
+    &:nth-child(4) {
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+    }
+
+    &:nth-child(5) {
+      clip-path: polygon(100% 0, 100% 100%, 0 50%);
+    }
+
+    &:nth-child(6) {
+      clip-path: polygon(100% 50%, 0 100%, 0 0);
+    }
+
+    &:nth-child(7) {
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+    }
+
+    &:nth-child(8) {
+      clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    }
   }
+  
   .shape {
     display: grid;
     place-content: center;
@@ -30,7 +49,10 @@
 
   body {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100% - 2rem, 300px), 1fr));
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(100% - 2rem, 300px), 1fr)
+    );
     gap: 2rem;
   }
 }
@@ -114,19 +136,6 @@
       scroll-behavior: auto !important;
       transition-duration: 0s !important;
       transition-delay: 0s !important;
-    }
-  }
-}
-
-
-@layer structure1 {
-  @layer structure2 {
-    @layer structure3 {
-      @layer structure4 {
-        @layer structure5 {
-          
-        }
-      }
     }
   }
 }
