@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SVG Moon Shape</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Hidden SVG with relative units for clip-path -->
+  <svg width="0" height="0" style="position: absolute">
+    <clipPath id="moon-clip-relative" clipPathUnits="objectBoundingBox">
+      <path d="M0.953,0.712 C0.983,0.648,1,0.576,1,0.5 C1,0.224,0.776,0,0.5,0 C0.224,0,0,0.224,0,0.5 C0,0.776,0.224,1,0.5,1 C0.576,1,0.648,0.983,0.712,0.953 C0.68,0.922,0.66,0.878,0.66,0.83 C0.66,0.736,0.736,0.66,0.83,0.66 C0.878,0.66,0.922,0.68,0.953,0.712"/>
+    </clipPath>
+  </svg>
+
+  <div class="demo-section">
+    <h2>SVG Moon Shape</h2>
+    <div class="demo-container">
+      <svg width="188" height="188" viewBox="0 0 188 188" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="moon-clip">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M179.138 133.895C184.823 121.785 188 108.263 188 94C188 42.0852 145.915 0 94 0C42.0852 0 0 42.0852 0 94C0 145.915 42.0852 188 94 188C108.263 188 121.785 184.823 133.895 179.138C127.798 173.312 124 165.099 124 156C124 138.327 138.327 124 156 124C165.099 124 173.312 127.798 179.138 133.895Z"/>
+          </clipPath>
+        </defs>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M179.138 133.895C184.823 121.785 188 108.263 188 94C188 42.0852 145.915 0 94 0C42.0852 0 0 42.0852 0 94C0 145.915 42.0852 188 94 188C108.263 188 121.785 184.823 133.895 179.138C127.798 173.312 124 165.099 124 156C124 138.327 138.327 124 156 124C165.099 124 173.312 127.798 179.138 133.895Z" fill="black"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>Image with Moon Shape Clip-path (background)</h2>
+    <div class="demo-container">
+      <div class="clipped-image"></div>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>Image with Moon Shape Clip-path (relative units)</h2>
+    <div class="demo-container">
+      <figure class="clipped-image-relative">
+        <img src="/public/avatar.jpg" alt="Clipped avatar">
+      </figure>
+    </div>
+  </div>
+</body>
+</html> 
