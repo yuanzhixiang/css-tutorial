@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>clip-path Box Model Keywords</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>clip-path Box Model Keywords</h1>
+  <p class="description">
+    这些关键字决定了裁剪形状的参考区域。每个元素都有四层区域：margin（外边距）、border（边框）、padding（内边距）和 content（内容）。
+    这些关键字告诉浏览器从哪一层开始计算裁剪形状。
+  </p>
+
+  <div class="demo-section">
+    <div class="example">
+      <h2>margin-box</h2>
+      <div class="box margin-box">
+        <div class="box-content">Content</div>
+      </div>
+      <p class="note">从最外层的 margin 开始计算裁剪区域<br>包括了所有的 margin、border、padding 和 content</p>
+    </div>
+
+    <div class="example">
+      <h2>border-box</h2>
+      <div class="box border-box">
+        <div class="box-content">Content</div>
+      </div>
+      <p class="note">从 border 开始计算裁剪区域<br>不包括 margin，但包括 border、padding 和 content</p>
+    </div>
+
+    <div class="example">
+      <h2>padding-box</h2>
+      <div class="box padding-box">
+        <div class="box-content">Content</div>
+      </div>
+      <p class="note">从 padding 开始计算裁剪区域<br>不包括 margin 和 border，但包括 padding 和 content</p>
+    </div>
+
+    <div class="example">
+      <h2>content-box</h2>
+      <div class="box content-box">
+        <div class="box-content">Content</div>
+      </div>
+      <p class="note">只从 content 区域开始计算裁剪区域<br>不包括 margin、border 和 padding，只包括 content</p>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="color margin"></div>
+      <span>Margin (外边距 40px)</span>
+    </div>
+    <div class="legend-item">
+      <div class="color border"></div>
+      <span>Border (边框 20px)</span>
+    </div>
+    <div class="legend-item">
+      <div class="color padding"></div>
+      <span>Padding (内边距 30px)</span>
+    </div>
+    <div class="legend-item">
+      <div class="color content"></div>
+      <span>Content (内容区)</span>
+    </div>
+  </div>
+
+  <div class="explanation">
+    <h2>理解这些关键字</h2>
+    <ul>
+      <li>这些关键字决定了裁剪形状的"参考点"，也就是从哪里开始计算裁剪区域</li>
+      <li>比如同样是 circle(80%)，在不同的关键字下：
+        <ul>
+          <li>margin-box：80% 是相对于包括 margin 在内的整个区域</li>
+          <li>border-box：80% 是相对于从 border 开始的区域（不含 margin）</li>
+          <li>padding-box：80% 是相对于从 padding 开始的区域（不含 margin 和 border）</li>
+          <li>content-box：80% 是相对于只有内容的区域（不含 margin、border 和 padding）</li>
+        </ul>
+      </li>
+      <li>这就像是在告诉浏览器："从这层开始往里裁剪"</li>
+    </ul>
+  </div>
+</body>
+</html> 
