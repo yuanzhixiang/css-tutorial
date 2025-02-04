@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>clip-path: path() Function</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Understanding Path Units with clip-path: path()</h1>
+  <p class="description">
+    This example demonstrates the difference between absolute and relative units in SVG paths when used with clip-path: path().
+    Notice how the shape behaves differently when the container size changes.
+  </p>
+
+  <div class="comparison-section">
+    <div class="comparison-item">
+      <h2>Absolute Units</h2>
+      <p>Using absolute coordinates (e.g., M179.138 133.895...)</p>
+      <p>Shape stretches when container dimensions change</p>
+      <div class="size-examples">
+        <div class="example">
+          <h3>Square (200x200)</h3>
+          <div class="example-comparison">
+            <div class="clip-container square absolute"></div>
+            <div class="image-container square"></div>
+          </div>
+        </div>
+        <div class="example">
+          <h3>Rectangle (300x200)</h3>
+          <div class="example-comparison">
+            <div class="clip-container rectangle absolute"></div>
+            <div class="image-container rectangle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="comparison-item">
+      <h2>Relative Units</h2>
+      <p>Using relative coordinates (e.g., M0.953,0.712...)</p>
+      <p>Shape maintains proportions regardless of container size</p>
+      <div class="size-examples">
+        <div class="example">
+          <h3>Square (200x200)</h3>
+          <div class="example-comparison">
+            <div class="clip-container square relative"></div>
+            <div class="image-container square"></div>
+          </div>
+        </div>
+        <div class="example">
+          <h3>Rectangle (300x200)</h3>
+          <div class="example-comparison">
+            <div class="clip-container rectangle relative"></div>
+            <div class="image-container rectangle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 
