@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clip-path Circle</title>
+    <title>Clip-path Ellipse</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
@@ -13,24 +13,32 @@
       <div class="control">
         <input
           type="range"
-          id="radius"
+          id="rx"
+          min="50"
+          max="300"
+          value="100"
+          name="radius"
+        />
+        <output for="rx" class="output-rx"> 100px </output>
+        <input
+          type="range"
+          id="ry"
           min="50"
           max="200"
           value="50"
           name="radius"
         />
-        <output for="radius" class="output-radius"> 50px </output>
+        <output for="ry" class="output-ry"> 50px </output>
       </div>
       <div class="control">
         <input type="checkbox" id="position" name="position" />
-
         <span>
           at
           <input
             type="range"
             id="position-x"
             min="0"
-            max="200"
+            max="300"
             value="0"
             disabled
           />
@@ -50,7 +58,7 @@
       )
     </div>
     <div class="container">
-      <div class="circle"></div>
+      <div class="ellipse"></div>
     </div>
   </body>
 </html>
