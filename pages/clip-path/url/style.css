@@ -36,7 +36,7 @@ svg {
 .clipped-image {
   width: 188px;
   height: 188px;
-  background: url('/public/avatar.jpg') center/cover;
+  background: url('../../../public/avatar.jpg') center/cover;
   clip-path: url(#moon-clip);
 }
 
