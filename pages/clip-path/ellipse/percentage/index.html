@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clip-path Ellipse</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="content">
+      clip-path:ellipse(
+      <div class="control">
+        <input
+          type="range"
+          id="rx"
+          min="0"
+          max="100"
+          value="50"
+          name="radius"
+        />
+        <output for="rx" class="output-rx">50%</output>
+        <input
+          type="range"
+          id="ry"
+          min="0"
+          max="100"
+          value="40"
+          name="radius"
+        />
+        <output for="ry" class="output-ry">40%</output>
+      </div>
+      <div class="control">
+        <input type="checkbox" id="position" name="position" />
+        <span>
+          at
+          <input
+            type="range"
+            id="position-x"
+            min="0"
+            max="100"
+            value="50"
+            disabled
+          />
+          <output for="position-x" class="output-position-x">50%</output>
+
+          <input
+            type="range"
+            id="position-y"
+            min="0"
+            max="100"
+            value="50"
+            disabled
+          />
+          <output for="position-y" class="output-position-y">50%</output>
+        </span>
+      </div>
+      )
+    </div>
+    <div class="container">
+      <div class="ellipse"></div>
+    </div>
+  </body>
+</html>
