@@ -1,0 +1,92 @@
+/* style.css for the ellipse side demo */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #f0f0f0;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.demo-section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.controls label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.demo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.demo-box {
+  width: 300px;
+  height: 200px;
+  background: #ff6347;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  position: relative;
+}
+
+/* Add center point marker */
+.demo-box::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  left: var(--position-x);
+  top: var(--position-y);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.closest {
+  --position-x: 50%;
+  --position-y: 50%;
+  clip-path: circle(closest-side at var(--position-x) var(--position-y));
+}
+
+.farthest {
+  --position-x: 50%;
+  --position-y: 50%;
+  clip-path: circle(farthest-side at var(--position-x) var(--position-y));
+} 

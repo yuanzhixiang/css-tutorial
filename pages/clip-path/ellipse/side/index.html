@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clip-path: Closest-side vs. Farthest-side</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="content">
+    <h1>Closest-side vs. Farthest-side Demo</h1>
+    
+    <div class="demo-section">
+      <h2>circle(closest-side at <span class="position-x">50</span>% <span class="position-y">50</span>%)</h2>
+      <div class="controls">
+        <label>
+          Position X:
+          <input type="range" id="closest-x" min="0" max="100" value="50" />
+        </label>
+        <label>
+          Position Y:
+          <input type="range" id="closest-y" min="0" max="100" value="50" />
+        </label>
+      </div>
+      <div class="demo-container">
+        <div class="demo-box closest">closest-side</div>
+      </div>
+    </div>
+
+    <div class="demo-section">
+      <h2>circle(farthest-side at <span class="position-x">50</span>% <span class="position-y">50</span>%)</h2>
+      <div class="controls">
+        <label>
+          Position X:
+          <input type="range" id="farthest-x" min="0" max="100" value="50" />
+        </label>
+        <label>
+          Position Y:
+          <input type="range" id="farthest-y" min="0" max="100" value="50" />
+        </label>
+      </div>
+      <div class="demo-container">
+        <div class="demo-box farthest">farthest-side</div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html> 
