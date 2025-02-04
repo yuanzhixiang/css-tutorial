@@ -74,19 +74,19 @@ h1 {
 
 /* Clip-path variations */
 .margin-box {
-  clip-path: circle(80%) margin-box;
+  clip-path: circle(100px) margin-box;
 }
 
 .border-box {
-  clip-path: circle(80%) border-box;
+  clip-path: circle(100px) border-box;
 }
 
 .padding-box {
-  clip-path: circle(80%) padding-box;
+  clip-path: circle(100px) padding-box;
 }
 
 .content-box {
-  clip-path: circle(80%) content-box;
+  clip-path: circle(100px) content-box;
 }
 
 /* Legend */
