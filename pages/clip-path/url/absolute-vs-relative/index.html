@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SVG Path Units Comparison</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- SVG with absolute units -->
+  <svg width="0" height="0" style="position: absolute">
+    <clipPath id="clip-absolute">
+      <path d="M179.138 133.895C184.823 121.785 188 108.263 188 94C188 42.0852 145.915 0 94 0C42.0852 0 0 42.0852 0 94C0 145.915 42.0852 188 94 188C108.263 188 121.785 184.823 133.895 179.138C127.798 173.312 124 165.099 124 156C124 138.327 138.327 124 156 124C165.099 124 173.312 127.798 179.138 133.895Z"/>
+    </clipPath>
+  </svg>
+
+  <!-- SVG with relative units -->
+  <svg width="0" height="0" style="position: absolute">
+    <clipPath id="clip-relative" clipPathUnits="objectBoundingBox">
+      <path d="M0.953,0.712 C0.983,0.648,1,0.576,1,0.5 C1,0.224,0.776,0,0.5,0 C0.224,0,0,0.224,0,0.5 C0,0.776,0.224,1,0.5,1 C0.576,1,0.648,0.983,0.712,0.953 C0.68,0.922,0.66,0.878,0.66,0.83 C0.66,0.736,0.736,0.66,0.83,0.66 C0.878,0.66,0.922,0.68,0.953,0.712"/>
+    </clipPath>
+  </svg>
+
+  <h1>Understanding SVG Path Units</h1>
+  <p class="description">
+    This example demonstrates the difference between absolute and relative units in SVG paths when used with clip-path.
+    Notice how the shape behaves differently when the container size changes.
+  </p>
+
+  <div class="comparison-section">
+    <div class="comparison-item">
+      <h2>Absolute Units</h2>
+      <p>Using absolute coordinates (e.g., M179.138 133.895...)</p>
+      <p>Shape stretches when container dimensions change</p>
+      <div class="size-examples">
+        <div class="example">
+          <h3>Square (200x200)</h3>
+          <div class="example-comparison">
+            <div class="clip-container square absolute"></div>
+            <div class="image-container square"></div>
+          </div>
+        </div>
+        <div class="example">
+          <h3>Rectangle (300x200)</h3>
+          <div class="example-comparison">
+            <div class="clip-container rectangle absolute"></div>
+            <div class="image-container rectangle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="comparison-item">
+      <h2>Relative Units</h2>
+      <p>Using relative coordinates (e.g., M0.953,0.712...)</p>
+      <p>Shape maintains proportions regardless of container size</p>
+      <div class="size-examples">
+        <div class="example">
+          <h3>Square (200x200)</h3>
+          <div class="example-comparison">
+            <div class="clip-container square relative"></div>
+            <div class="image-container square"></div>
+          </div>
+        </div>
+        <div class="example">
+          <h3>Rectangle (300x200)</h3>
+          <div class="example-comparison">
+            <div class="clip-container rectangle relative"></div>
+            <div class="image-container rectangle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

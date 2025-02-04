@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  padding: 40px;
+  background: white;
+  font-family: system-ui, -apple-system, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.description {
+  color: #666;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+/* Comparison section */
+.comparison-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.comparison-item {
+  background: #f5f5f5;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.comparison-item h2 {
+  color: #333;
+  margin: 0 0 20px 0;
+}
+
+.comparison-item p {
+  color: #666;
+  margin: 10px 0;
+}
+
+/* Examples grid */
+.size-examples {
+  display: grid;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.example h3 {
+  color: #666;
+  font-size: 16px;
+  margin: 0 0 15px 0;
+}
+
+/* Example comparison layout */
+.example-comparison {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Image and clip containers base styles */
+.image-container,
+.clip-container {
+  background: url('../../../../public/avatar.jpg') center/cover;
+}
+
+/* Square containers */
+.square {
+  width: 200px;
+  height: 200px;
+}
+
+/* Rectangle containers */
+.rectangle {
+  width: 300px;
+  height: 200px;
+}
+
+/* Apply clip paths */
+.clip-container.absolute {
+  clip-path: url(#clip-absolute);
+}
+
+.clip-container.relative {
+  clip-path: url(#clip-relative);
+} 
