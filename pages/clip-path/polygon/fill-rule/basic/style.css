@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  padding: 40px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.title {
+  text-align: center;
+  font-family: sans-serif;
+  color: #333;
+}
+
+.demo-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+}
+
+.demo-box {
+  width: 200px;
+  height: 200px;
+  background: #90EE90;  /* Light green color */
+}
+
+/* Left box - both clockwise */
+.nonzero.clockwise {
+  clip-path: polygon(nonzero,
+    /* Outer rectangle clockwise */
+    0% 0%,
+    100% 0%,
+    100% 100%,
+    0% 100%,
+    0% 0%,
+    /* Inner rectangle clockwise */
+    25% 25%,
+    75% 25%,
+    75% 75%,
+    25% 75%,
+    25% 25%
+  );
+}
+
+/* Right box - inner counter-clockwise */
+.nonzero.counter-clockwise {
+  clip-path: polygon(nonzero,
+    /* Outer rectangle clockwise */
+    0% 0%,
+    100% 0%,
+    100% 100%,
+    0% 100%,
+    0% 0%,
+    /* Inner rectangle counter-clockwise */
+    25% 25%,
+    25% 75%,
+    75% 75%,
+    75% 25%,
+    25% 25%
+  );
+}
+
+/* Left box - both clockwise */
+.evenodd.clockwise {
+  clip-path: polygon(evenodd,
+    /* Outer rectangle clockwise */
+    0% 0%,
+    100% 0%,
+    100% 100%,
+    0% 100%,
+    0% 0%,
+    /* Inner rectangle clockwise */
+    25% 25%,
+    75% 25%,
+    75% 75%,
+    25% 75%,
+    25% 25%
+  );
+}
+
+/* Right box - inner counter-clockwise */
+.evenodd.counter-clockwise {
+  clip-path: polygon(evenodd,
+    /* Outer rectangle clockwise */
+    0% 0%,
+    100% 0%,
+    100% 100%,
+    0% 100%,
+    0% 0%,
+    /* Inner rectangle counter-clockwise */
+    25% 25%,
+    25% 75%,
+    75% 75%,
+    75% 25%,
+    25% 25%
+  );
+}
+
+/* Left box - both clockwise */
+.default.clockwise {
+  clip-path: polygon(
+    /* Outer rectangle clockwise */
+    0% 0%,
+    100% 0%,
+    100% 100%,
+    0% 100%,
+    0% 0%,
+    /* Inner rectangle clockwise */
+    25% 25%,
+    75% 25%,
+    75% 75%,
+    25% 75%,
+    25% 25%
+  );
+}
+
+/* Right box - inner counter-clockwise */
+.default.counter-clockwise {
+  clip-path: polygon(
+    /* Outer rectangle clockwise */
+    0% 0%,
+    100% 0%,
+    100% 100%,
+    0% 100%,
+    0% 0%,
+    /* Inner rectangle counter-clockwise */
+    25% 25%,
+    25% 75%,
+    75% 75%,
+    75% 25%,
+    25% 25%
+  );
+} 
