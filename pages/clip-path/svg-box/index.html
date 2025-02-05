@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>clip-path Reference Boxes Demo</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 20px;
+      }
+      /* 公共样式，用于演示效果 */
+      .demo-box {
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        padding: 10px;
+        border: 10px solid #333;
+        margin-bottom: 20px;
+      }
+      /* 使用 fill-box: 裁剪区域为元素的填充区域，不包括边框 */
+      .fill-box {
+        clip-path: fill-box;
+      }
+      /* 使用 stroke-box: 裁剪区域包括边框 */
+      .stroke-box {
+        clip-path: stroke-box;
+      }
+      /* SVG 示例：对于 SVG 元素，view-box 关键词会使用 SVG 的 viewBox 作为参考盒 */
+      svg {
+        border: 10px solid #333;
+        margin-bottom: 20px;
+      }
+      /* 对 SVG 内的图形使用 clip-path: view-box */
+      .svg-rect {
+        clip-path: view-box;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>clip-path 参考盒关键词 Demo</h1>
+
+    <h2>HTML 元素</h2>
+    <p>
+      <code>clip-path: fill-box;</code> ——
+      裁剪区域为元素的填充区域（不含边框）。
+    </p>
+    <div class="demo-box fill-box"></div>
+
+    <p><code>clip-path: stroke-box;</code> —— 裁剪区域包括边框。</p>
+    <div class="demo-box"></div>
+  </body>
+</html>
